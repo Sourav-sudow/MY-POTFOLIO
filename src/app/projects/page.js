@@ -31,7 +31,7 @@ export default function Home() {
       href: "https://lerno.ai",
       description:
         "Lerno.ai – AI-powered interactive learning platform that helps university students explore syllabus topics, learn through videos, ask an AI tutor, generate quizzes, and track progress in one place.",
-      image: "/assets/projects/Timeline 1 2.mov", // Playable video from public directory
+      image: "/assets/projects/Timeline 1 2 copy.mov", // Public video file for autoplay
       imageAlt: "Lerno AI",
       technologies: [
         "TypeScript",

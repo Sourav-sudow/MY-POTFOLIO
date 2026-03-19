@@ -42,7 +42,7 @@ export default function ProjectCard({
         className="block overflow-hidden"
       >
         <div className="relative">
-          {title === "Lerno Ai" ? (
+          {image && typeof image === "string" && (image.includes("drive.google.com") || image.endsWith('.mov') || image.endsWith('.mp4')) ? (
             <video
               src={image}
               className="rounded-t-lg w-full h-[250px] group-hover:h-[275px] object-cover object-center transition-all duration-500"
@@ -51,28 +51,16 @@ export default function ProjectCard({
               muted
               playsInline
               poster={imageAlt}
+              controls
             />
           ) : (
-            image && (typeof image === "string" && (image.endsWith('.mov') || image.endsWith('.mp4')))
-              ? (
-                <video
-                  src={image}
-                  className="rounded-t-lg w-full h-[250px] group-hover:h-[275px] object-cover object-center transition-all duration-500"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  poster={imageAlt}
-                />
-              ) : (
-                <Image
-                  src={image}
-                  placeholder={`data:image/svg+xml;base64,${toBase64(shimmer)}`}
-                  alt={imageAlt}
-                  className="rounded-t-lg w-full h-[250px] group-hover:h-[275px] object-cover object-center transition-all duration-500"
-                  unoptimized={image && (typeof image === "string" && image.endsWith('.gif'))}
-                />
-              )
+            <Image
+              src={image}
+              placeholder={`data:image/svg+xml;base64,${toBase64(shimmer)}`}
+              alt={imageAlt}
+              className="rounded-t-lg w-full h-[250px] group-hover:h-[275px] object-cover object-center transition-all duration-500"
+              unoptimized={image && (typeof image === "string" && image.endsWith('.gif'))}
+            />
           )}
         </div>
       </a>
